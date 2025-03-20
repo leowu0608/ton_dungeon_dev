@@ -1,0 +1,30 @@
+{
+	"skins": {},
+	"autoGenerateExmlsList": true,
+	"exmls": [
+		"resource/skins/battle/item/BattleBossBuffItemSkin.exml",
+		"resource/skins/battle/item/BattleBossPassiveItemSkin.exml",
+		"resource/skins/battle/item/BattleBossSkillItemSkin.exml",
+		"resource/skins/battle/item/BattlePlayerBuffItemSkin.exml",
+		"resource/skins/battle/item/BattlePlayerPassiveItemSkin.exml",
+		"resource/skins/battle/item/BattlePlayerSkillItemSkin.exml",
+		"resource/skins/battle/other/PlayerHpBarSkin.exml",
+		"resource/skins/battle/item/PlayerHpItemSkin.exml",
+		"resource/skins/battle/other/BattleBossHpBarSkin.exml",
+		"resource/skins/common/BtnSkin.exml",
+		"resource/skins/common/BtnSkin1.exml",
+		"resource/skins/battle/pve/NormalBattleSkin.exml",
+		"resource/skins/common/BtnSkin2.exml",
+		"resource/skins/city/CitySkin.exml",
+		"resource/skins/common/BtnYellowSkin.exml",
+		"resource/skins/load/SceneLoadBaeSkin.exml",
+		"resource/skins/load/SceneLoadSkin.exml",
+		"resource/skins/sysAlert/SysAlertItem2Skin.exml",
+		"resource/skins/sysAlert/SysAlertItem3Skin.exml",
+		"resource/skins/sysAlert/SysAlertItem5Skin.exml",
+		"resource/skins/sysAlert/SysAlertItemSkin.exml",
+		"resource/skins/sysAlert/SysCloseBtnSkin.exml",
+		"resource/skins/sysAlert/SysNoticeSkin.exml"
+	],
+	"path": "resource/default.thm.json"
+}

@@ -1,0 +1,238 @@
+{
+	"groups": [
+		{
+			"keys": "cfg_1_json,cfg_2_json,cfg_3_json,cfg_4_json",
+			"name": "config"
+		},
+		{
+			"keys": "sound_button_press_mp3",
+			"name": "sound"
+		},
+		{
+			"keys": "common_json",
+			"name": "common"
+		},
+		{
+			"keys": "combo_fnt,damage_fnt,role_strength_fnt,progress_fnt,merge_fnt",
+			"name": "font"
+		},
+		{
+			"keys": "battle_json",
+			"name": "battle"
+		},
+		{
+			"keys": "city_json",
+			"name": "city"
+		},
+		{
+			"keys": "sysAlert_json",
+			"name": "sysAlert"
+		},
+		{
+			"keys": "plot_json",
+			"name": "plot"
+		},
+		{
+			"keys": "login_bg2_png,login_quest_1_png,login_quest_2_png,login_quest_3_png,login_role1_png,login_role2_png,login_role3_png,login_role4_png,login_roleBg_jpg,login_serverBg1_jpg,login_serverBg2_jpg,login_json,login_quest_prompt_png,login_preview_png",
+			"name": "login"
+		}
+	],
+	"resources": [
+		{
+			"url": "sound/sound_button_press.mp3",
+			"type": "sound",
+			"name": "sound_button_press_mp3"
+		},
+		{
+			"url": "ui/font/combo.fnt",
+			"type": "font",
+			"name": "combo_fnt"
+		},
+		{
+			"url": "ui/font/damage.fnt",
+			"type": "font",
+			"name": "damage_fnt"
+		},
+		{
+			"url": "ui/common/common.json",
+			"type": "sheet",
+			"name": "common_json",
+			"subkeys": "ability_red_n0,ability_red_n1,ability_red_n2,ability_red_n3,ability_red_n4,ability_red_n5,ability_red_n6,ability_red_n7,ability_red_n8,ability_red_n9,ability_yellow_n0,ability_yellow_n1,ability_yellow_n2,ability_yellow_n3,ability_yellow_n4,ability_yellow_n5,ability_yellow_n6,ability_yellow_n7,ability_yellow_n8,ability_yellow_n9,affinity1_1,affinity1_2,affinity1_3,affinity2_1,affinity2_2,affinity2_3,affinity3_1,affinity3_2,affinity3_3,affinity4_1,affinity4_2,affinity4_3,arrowLeft3,attr_base,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btnAdd,btnBack1,btnBack2,btnBack3,btnClose1,btnClose2,btnClose3,btnInfo1,btnInfo2,btnMinus,btnTab1,btnTab2,btnTab3,com_ability_bg,com_ability_item,com_add,com_add1,com_arrow,com_arrow1,com_arrow2,com_arrow3,com_arrow5,com_arrow6,com_arrow7,com_arrow8,com_arrow9,com_awards_bar,com_awards_bar_bg,com_awards_des,com_awards_des1,com_awards_des2,com_awards_des3,com_awards_state0,com_awards_state1,com_awards_state2,com_bar_bg,com_bar_green,com_battle,com_bg1,com_bg_name,com_bigRed,com_blue,com_box1_0,com_box1_1,com_btn,com_btn_arrow,com_btn_info3,com_bubble0,com_bubble1,com_button_bg,com_check0,com_check1,com_check2,com_compose,com_cost_text,com_drop_1,com_drop_2,com_entrance_bg0,com_entrance_bg1,com_equipLv_0,com_equipLv_1,com_equipLv_2,com_equipLv_3,com_equipLv_4,com_equipLv_5,com_equipLv_6,com_equipLv_7,com_equipLv_8,com_equipLv_9,com_equip_10,com_equip_1_1,com_equip_1_2,com_equip_1_3,com_equip_1_4,com_equip_2_1,com_equip_2_2,com_equip_2_3,com_equip_2_4,com_equip_3,com_equip_4,com_equip_5,com_equip_6,com_equip_7,com_equip_8,com_equip_9,com_exp_bar,com_exp_bar_bg,com_f_ability_0,com_f_ability_1,com_f_ability_2,com_f_ability_3,com_f_ability_4,com_f_ability_5,com_f_ability_6,com_f_ability_7,com_f_ability_8,com_f_ability_9,com_f_ability_q,com_f_itemNum1_-,com_f_itemNum1_.,com_f_itemNum1_0,com_f_itemNum1_1,com_f_itemNum1_2,com_f_itemNum1_3,com_f_itemNum1_4,com_f_itemNum1_5,com_f_itemNum1_6,com_f_itemNum1_7,com_f_itemNum1_8,com_f_itemNum1_9,com_f_itemNum1_万,com_f_itemNum1_亿,com_f_itemNum1_杠2,com_f_level1_0,com_f_level1_1,com_f_level1_2,com_f_level1_3,com_f_level1_4,com_f_level1_5,com_f_level1_6,com_f_level1_7,com_f_level1_8,com_f_level1_9,com_f_level2_0,com_f_level2_1,com_f_level2_2,com_f_level2_3,com_f_level2_4,com_f_level2_5,com_f_level2_6,com_f_level2_7,com_f_level2_8,com_f_level2_9,com_f_money1_.,com_f_money1_0,com_f_money1_1,com_f_money1_2,com_f_money1_3,com_f_money1_4,com_f_money1_5,com_f_money1_6,com_f_money1_7,com_f_money1_8,com_f_money1_9,com_f_money1_万,com_f_money1_亿,com_f_vip1_0,com_f_vip1_1,com_f_vip1_2,com_f_vip1_3,com_f_vip1_4,com_f_vip1_5,com_f_vip1_6,com_f_vip1_7,com_f_vip1_8,com_f_vip1_9,com_go,com_hasEquip,com_hell_lv_bg,com_hint2,com_icon_ban,com_icon_mask,com_img_1,com_line1,com_line2,com_lock,com_lv_bg,com_max,com_my_rank,com_name_text,com_new,com_new1,com_null0,com_null1,com_null2,com_null3,com_null4,com_on,com_over_reward,com_pet_color3,com_pet_color4,com_pet_color5,com_pet_color6,com_pet_job1,com_pet_job2,com_pet_job3,com_pro_bar,com_pro_bg,com_recommend,com_red,com_reward_pre,com_reward_pro,com_role,com_skill_bg,com_star,com_star1,com_star2_0,com_star2_1,com_star3,com_star4,com_star_bg1,com_star_bg2,com_star_reward,com_tab,com_tab0,com_tab_bg,com_tab_bg0_0,com_tab_bg0_1,com_tab_h,com_tab_h1,com_tab_v1,com_target_bg5,com_time1,com_time2,com_tip_bg,com_tip_resolve,com_title_bg1,com_tubiao,com_vipBg,com_wifi0,com_wifi1,com_wifi2,com_wifi3,common_awards_title,common_dotted,common_dungeon_unknow,common_slider_bg1,equip_a_1,equip_a_2,equip_a_3,equip_a_4,equip_a_5,equip_a_6,equip_a_7,equip_a_8,equip_a_9,equip_lv_bg,equip_p10,equip_p7,equip_p8,equip_p9,equip_r,equip_r_1,equip_r_2,equip_r_3,equip_r_4,equip_r_5,equip_star,equip_star_1,equip_star_2,equip_star_3,equip_star_4,equip_star_5,guard_citem1,guard_citem2,guard_citem3,guard_citem4,guard_citem5,guard_citem6,guard_ele_1,guard_ele_2,guard_ele_3,guard_ele_4,guard_ele_5,hero_default,hero_shadow,hint1,hint2,hint3,infoBg,job1,job2,job3,job4,job5,line1,line2,money_1,money_2,money_3,money_draw,money_exp,money_tired,name_use,pTabLight,pTabLine,pbg2,pbg4,pbg5,pbg6,pbg7,pbg7_0,pbg7_1,pbg9,pbgBottom1,pbgBottom2,pbgBottom3,pbgBottom4,pbgFigure,pbgLine1,pbgLv,pbgMenu1,pbgTip2,pbgTitle1,pbgWord,preload_alertBg,preload_alertTitle,preload_bar1,preload_barBg,preload_btn1,preload_btn2,preload_check1,preload_checkBg1,preload_closeBtn1,preload_dotted,preload_progressBg,preload_skip,preload_small_loading0,preload_small_loading1,preload_small_loading2,preload_small_loading3,preload_small_loading4,preload_uibg1,pro_400,progress_%,progress_0,progress_1,progress_2,progress_3,progress_4,progress_5,progress_6,progress_7,progress_8,progress_9,quality_1,quality_2,quality_3,quality_4,quality_5,quality_6,quality_a_1,quality_a_2,quality_a_3,quality_a_4,quality_a_5,quality_a_6,quality_dark,quality_sub_1,quality_sub_2,quality_sub_3,received_word,slider_bg1,special_item_des_bg,special_item_img,stepBg,tab_line,title_bg1,vanem2_mirage_hold,vanme3_com_awards,vname2_adv_star,vname2_affinity,vname2_all_attr,vname2_all_reward,vname2_ancient_boost,vname2_challenge_rank,vname2_change_name,vname2_cloth_compose,vname2_cost_choose,vname2_damage_rank,vname2_day_target,vname2_draw,vname2_egg_share,vname2_enchant_grade,vname2_essence_coll,vname2_essence_up,vname2_exchange,vname2_fetter,vname2_fskill_pre,vname2_fun,vname2_gTrials,vname2_gem_lv,vname2_genres,vname2_ghostK_h_title,vname2_ghostK_rank_title,vname2_ghostK_reward_title,vname2_head,vname2_hell_awards,vname2_info_set,vname2_invite,vname2_luck_collect,vname2_mirage_box,vname2_mirage_rank,vname2_mouth_store,vname2_party_apply,vname2_party_donate,vname2_party_job,vname2_pet_compose,vname2_pet_sally_award,vname2_pet_sally_battle,vname2_pet_sally_send,vname2_rank_award,vname2_rank_reward,vname2_reward_pre,vname2_role_pet,vname2_sally_rank,vname2_score_rank,vname2_season,vname2_skill_name,vname2_target_reward,vname2_time_limit,vname2_total_rank,vname2_use,vname3_awards,vname3_build_lv,vname3_choose,vname3_drop,vname3_ill,vname3_last_count,vname3_last_count1,vname3_party_wish,vname3_retrain,vname3_reward_pre,vname3_skill_attr,vname3_skill_help,vname3_title_attr,vname3_wish,vname_ShopViewGhostKing,vname_active_activity,vname_active_activity1,vname_activity_grp_1001,vname_activity_grp_1101,vname_adv,vname_ancient,vname_ancientB,vname_battle_pass,vname_draw_g,vname_draw_spirit,vname_fund,vname_fund_login,vname_game_top,vname_game_top1,vname_game_top2,vname_ghost_king,vname_ghosts_trials,vname_mTheme,vname_mirage,vname_novice_gift,vname_pet_sally,vname_roleP,vname_sevenGift,vname_time_limit,vname_wish_gift"
+		},
+		{
+			"url": "ui/font/role_strength.fnt",
+			"type": "font",
+			"name": "role_strength_fnt"
+		},
+		{
+			"url": "ui/font/progress.fnt",
+			"type": "font",
+			"name": "progress_fnt"
+		},
+		{
+			"url": "ui/sysAlert/sysAlert.json",
+			"type": "sheet",
+			"name": "sysAlert_json",
+			"subkeys": "sysAlert_alertBg,sysAlert_bg1,sysAlert_bg2,sysAlert_bg3,sysAlert_btn_next,sysAlert_btn_pre,sysAlert_close1,sysAlert_down_btn,sysAlert_f_level3_0,sysAlert_f_level3_1,sysAlert_f_level3_2,sysAlert_f_level3_3,sysAlert_f_level3_4,sysAlert_f_level3_5,sysAlert_f_level3_6,sysAlert_f_level3_7,sysAlert_f_level3_8,sysAlert_f_level3_9,sysAlert_getReward_full_text,sysAlert_getReward_text,sysAlert_get_reward_full_bg,sysAlert_greed,sysAlert_levelWord1,sysAlert_levelWord2,sysAlert_need,sysAlert_new_item_bg_1,sysAlert_new_item_bg_2,sysAlert_noticeBg,sysAlert_pointBg,sysAlert_ryellow,sysAlert_scuess_1,sysAlert_scuess_3,sysAlert_scuess_4,sysAlert_scuess_5,sysAlert_scuess_7_txt,sysAlert_scuess_feed,sysAlert_scuess_fm,sysAlert_scuess_func,sysAlert_scuess_hc,sysAlert_scuess_huode,sysAlert_scuess_jl,sysAlert_scuess_lv,sysAlert_scuess_qh,sysAlert_scuess_tp,sysAlert_scuess_up,sysAlert_scuess_upGrade,sysAlert_scuess_upQuality,sysAlert_scuess_wsq,sysAlert_specialBg,sysAlert_step0,sysAlert_step1,sysAlert_up_btn"
+		},
+		{
+			"url": "ui/font/merge.fnt",
+			"type": "font",
+			"name": "merge_fnt"
+		},
+		{
+			"url": "ui/battle/battle.json",
+			"type": "sheet",
+			"name": "battle_json",
+			"subkeys": "battle_alphaBg,battle_bossHp1,battle_bossHp2,battle_bossHp3,battle_bossHp4,battle_bossHp5,battle_bossHpBg,battle_bossHpFade,battle_bossSkillBg,battle_btn1,battle_btn2,battle_buff_123,battle_buff_152,battle_buff_162,battle_buff_23,battle_buff_32,battle_closeBtn,battle_disk,battle_diskBg,battle_drop,battle_passive_1,battle_passive_161,battle_passive_162,battle_passive_2,battle_passive_3,battle_playerHp1,battle_playerHp2,battle_playerHpBg,battle_quit,battle_skillBg,battle_skillMask,battle_skillNameBg,battle_skill_102,battle_skill_103,battle_skill_2,battle_skill_3,battle_tipBtn,battle_tipBtn2"
+		},
+		{
+			"url": "ui/plot/plot.json",
+			"type": "sheet",
+			"name": "plot_json",
+			"subkeys": "plot_all_text,plot_arrow,plot_arrow_force,plot_auto_btn,plot_auto_t0,plot_auto_t1,plot_auto_t2,plot_back_btn,plot_barrage_close,plot_barrage_open,plot_bg,plot_bg_1,plot_bg_2,plot_bg_3,plot_bg_4,plot_bubble_long,plot_bubble_mark,plot_bubble_rect,plot_bubble_short,plot_bubble_trapezoid,plot_cur_text,plot_effect,plot_effect_force,plot_guide_end_button,plot_guide_start_btn,plot_hide,plot_img_1,plot_img_2,plot_img_3,plot_img_4,plot_img_5,plot_img_6,plot_img_7,plot_next_text,plot_next_text_small,plot_option_bg,plot_option_select_bg,plot_option_sort_A,plot_option_sort_B,plot_option_sort_C,plot_option_sort_D,plot_other_fuse_name,plot_show,plot_skip_btn,plot_slide_1,plot_slide_1_bg,plot_text_bg_1,plot_text_bg_11,plot_text_bg_2,plot_text_bg_4,plot_text_bg_5,plot_text_bg_6,plot_text_bg_7,plot_text_bg_9,plot_text_name_bg,plot_text_name_bg_2"
+		},
+		{
+			"url": "config/cfg_1.json",
+			"type": "json",
+			"name": "cfg_1_json"
+		},
+		{
+			"url": "config/cfg_2.json",
+			"type": "json",
+			"name": "cfg_2_json"
+		},
+		{
+			"url": "loadbg/preload_bg_0.jpg",
+			"type": "image",
+			"name": "preload_bg_0_jpg"
+		},
+		{
+			"url": "loadbg/preload_bg_2.jpg",
+			"type": "image",
+			"name": "preload_bg_2_jpg"
+		},
+		{
+			"url": "loadbg/preload_bg_1.jpg",
+			"type": "image",
+			"name": "preload_bg_1_jpg"
+		},
+		{
+			"url": "loadbg/preload_bg_3.jpg",
+			"type": "image",
+			"name": "preload_bg_3_jpg"
+		},
+		{
+			"url": "loadbg/preload_bg_5.jpg",
+			"type": "image",
+			"name": "preload_bg_5_jpg"
+		},
+		{
+			"url": "loadbg/preload_bg_4.jpg",
+			"type": "image",
+			"name": "preload_bg_4_jpg"
+		},
+		{
+			"url": "ui/city/city.json",
+			"type": "sheet",
+			"name": "city_json",
+			"subkeys": "city_VIPBtn,city_ability,city_ability_0,city_ability_1,city_ability_2,city_ability_3,city_ability_4,city_ability_5,city_ability_6,city_ability_7,city_ability_8,city_ability_9,city_activityBtn,city_addBtn,city_alphaBg,city_arrow2,city_backTeamBtn,city_bannerBg2,city_bannerBtn1,city_bannerBtn2,city_bg1,city_bg2,city_bg3,city_bigRed,city_bindGold_ex,city_bindGold_title,city_bubble,city_bubble_bg1,city_challengeBtn,city_channel1,city_channel2,city_channel3,city_channel4,city_channel6,city_channel7,city_chatBg,city_chatBtn,city_conv_hide_other,city_conv_show_other,city_createTeamBtn,city_day1,city_day10,city_day11,city_day12,city_day13,city_day14,city_day2,city_day3,city_day4,city_day5,city_day6,city_day7,city_day8,city_day9,city_disk,city_diskBg,city_download,city_download_bar,city_download_stop,city_expBar,city_expBg,city_f_ability4_0,city_f_ability4_1,city_f_ability4_2,city_f_ability4_3,city_f_ability4_4,city_f_ability4_5,city_f_ability4_6,city_f_ability4_7,city_f_ability4_8,city_f_ability4_9,city_f_hellLv_0,city_f_hellLv_1,city_f_hellLv_2,city_f_hellLv_3,city_f_hellLv_4,city_f_hellLv_5,city_f_hellLv_6,city_f_hellLv_7,city_f_hellLv_8,city_f_hellLv_9,city_f_hellLv_阶,city_f_power_0,city_f_power_1,city_f_power_2,city_f_power_3,city_f_power_4,city_f_power_5,city_f_power_6,city_f_power_7,city_f_power_8,city_f_power_9,city_f_power__,city_func_2004,city_func_2009,city_func_2019,city_func_2022,city_func_2034,city_func_2041,city_func_2042,city_func_216_0,city_func_216_1,city_func_265_0,city_func_265_1,city_func_701_0,city_func_701_1,city_func_open_267,city_func_open_269,city_func_open_291,city_func_open_294,city_func_open_304,city_func_open_512,city_func_open_634,city_func_tips1,city_func_tips2,city_func_tips3,city_func_tipsBg1,city_func_tipsBg2,city_gain_bindGold,city_gain_gold,city_gold_ex,city_gold_title,city_guiseBtn,city_hangBtn,city_hell_bg,city_hell_pro2_0,city_hell_pro2_1,city_lineArrow1,city_lineArrow2,city_lineBg,city_lv,city_moneyBg,city_own_gold,city_own_ticket,city_petBg,city_petBtn,city_petChangeBtn,city_petChangeLine,city_petSelected,city_petShow,city_pet_101,city_pet_102,city_pet_103,city_pet_104,city_pet_121,city_pet_122,city_pet_123,city_pet_124,city_pet_125,city_pet_126,city_pet_127,city_pet_141,city_pet_142,city_pet_143,city_pet_144,city_pet_145,city_pet_146,city_pet_147,city_pet_148,city_pet_149,city_pet_150,city_pet_151,city_pet_152,city_pet_153,city_pet_181,city_pet_182,city_pet_183,city_pet_184,city_pet_185,city_pet_187,city_pet_194,city_powerBar,city_powerBg,city_powerBtn,city_power_bar_bg,city_power_bar_thumb,city_power_bg,city_roleBtn,city_setBtn,city_street_arrow,city_tab_0,city_tab_1,city_target_sys,city_taskBg,city_task_bg,city_task_bg1,city_team_bar,city_team_barBg,city_title1,city_title2,city_wifi,city_wj1,city_wj2,city_wj3,npc_answer0,npc_answer1,npc_answer2,npc_answer3,npc_answer_bg,npc_award_bg,npc_bg,npc_bg2,npc_des_friend,npc_friend_icon,npc_friend_icon1,npc_pro0,npc_pro1,npc_pro2,npc_q0,npc_q1,npc_state0,npc_state0_left,npc_state0_right,npc_state1,npc_state1_left,npc_state1_right,npc_state2,npc_title_bg"
+		},
+		{
+			"url": "loadbg/preload_bg_6.jpg",
+			"type": "image",
+			"name": "preload_bg_6_jpg"
+		},
+		{
+			"url": "config/cfg_3.json",
+			"type": "json",
+			"name": "cfg_3_json"
+		},
+		{
+			"url": "config/cfg_4.json",
+			"type": "json",
+			"name": "cfg_4_json"
+		},
+		{
+			"url": "loadbg/preload_bg_7.jpg",
+			"type": "image",
+			"name": "preload_bg_7_jpg"
+		},
+		{
+			"url": "loadbg/preload_bg_8.jpg",
+			"type": "image",
+			"name": "preload_bg_8_jpg"
+		},
+		{
+			"url": "ui/login/login_bg2.png",
+			"type": "image",
+			"name": "login_bg2_png"
+		},
+		{
+			"url": "ui/login/login_quest_1.png",
+			"type": "image",
+			"name": "login_quest_1_png"
+		},
+		{
+			"url": "ui/login/login_quest_2.png",
+			"type": "image",
+			"name": "login_quest_2_png"
+		},
+		{
+			"url": "ui/login/login_quest_3.png",
+			"type": "image",
+			"name": "login_quest_3_png"
+		},
+		{
+			"url": "ui/login/login_role1.png",
+			"type": "image",
+			"name": "login_role1_png"
+		},
+		{
+			"url": "ui/login/login_role2.png",
+			"type": "image",
+			"name": "login_role2_png"
+		},
+		{
+			"url": "ui/login/login_role3.png",
+			"type": "image",
+			"name": "login_role3_png"
+		},
+		{
+			"url": "ui/login/login_role4.png",
+			"type": "image",
+			"name": "login_role4_png"
+		},
+		{
+			"url": "ui/login/login_roleBg.jpg",
+			"type": "image",
+			"name": "login_roleBg_jpg"
+		},
+		{
+			"url": "ui/login/login_serverBg1.jpg",
+			"type": "image",
+			"name": "login_serverBg1_jpg"
+		},
+		{
+			"url": "ui/login/login_serverBg2.jpg",
+			"type": "image",
+			"name": "login_serverBg2_jpg"
+		},
+		{
+			"url": "ui/login/login.json",
+			"type": "sheet",
+			"name": "login_json",
+			"subkeys": "login_account,login_ad_tab,login_ad_tab1,login_ad_tab_bg,login_back_btn,login_back_label_1,login_btn_back,login_changeService,login_continue_text,login_create_job1,login_create_job2,login_create_job3,login_create_job4,login_dot,login_figure,login_jobBg1,login_jobBg2,login_jobBg3,login_jobBg4,login_jobIcon1,login_jobIcon2,login_jobIcon3,login_jobIcon4,login_jobTitle1,login_jobTitle2,login_jobTitle3,login_jobTitle4,login_line,login_line1,login_line2,login_link_down,login_link_up,login_listBg,login_logo,login_logo_shadow,login_make_icon,login_new,login_noticeBtn,login_noticeTitle,login_password,login_power_1,login_power_2,login_power_3,login_power_4,login_power_bg,login_repick_text,login_repick_text2,login_roleTag1,login_roleTag10,login_roleTag11,login_roleTag12,login_roleTag2,login_roleTag3,login_roleTag4,login_roleTag5,login_roleTag6,login_roleTag7,login_roleTag8,login_roleTag9,login_select_text,login_serTitle,login_starBtn1,login_status0,login_status1,login_status2,login_status3,login_sure_text,login_switch_text_repick,login_switch_user,login_tabBg,login_tabDown1,login_tabDown2,login_tabUp1,login_tabUp2,login_text_bg,login_text_enter,login_text_enter_by_repick,login_text_icon,login_text_line,login_text_line2,login_text_make,login_uibg2,login_uibg3,login_uibg4,login_uibg5,login_uibg6,login_uibg7,login_video_bounds"
+		},
+		{
+			"url": "ui/login/login_quest_prompt.png",
+			"type": "image",
+			"name": "login_quest_prompt_png"
+		},
+		{
+			"url": "ui/login/login_preview.png",
+			"type": "image",
+			"name": "login_preview_png"
+		}
+	]
+}
