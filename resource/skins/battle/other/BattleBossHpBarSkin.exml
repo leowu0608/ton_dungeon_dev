@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BattleBossHpBarSkin" xmlns:e="http://ns.egret.com/eui" xmlns:core="core.*" xmlns:w="http://ns.egret.com/wing" width="642" height="28">
+	<core:UIImage id="fadeMask" x="0" source="battle_bossHpBg" height="28" width="642" y="0" scale9Grid="5,9,6,10"/>
+	<core:UIImage id="thumbMask" x="0" y="0" source="battle_bossHpBg" width="642" height="28" scale9Grid="5,9,6,10"/>
+	<core:UIImage x="0" y="0" source="battle_bossHpBg" width="642" height="28" scale9Grid="5,9,6,10"/>
+	<core:UIImage id="next" x="3" width="636" height="22" source="battle_bossHp1" scale9Grid="3,7,4,8" y="3"/>
+	<core:UIImage id="fade" x="3" y="3" mask="{fadeMask}" source="battle_bossHpFade" width="636" height="22" scale9Grid="3,7,4,8"/>
+	<core:UIImage id="thumb" x="3" y="3" mask="{thumbMask}" width="636" height="22" source="battle_bossHp1" scale9Grid="3,7,4,8"/>
+	<e:Label id="labelDisplay" text="" size="18" height="28" textAlign="center" width="642" x="0" y="0" textColor="0xE2E2E2" verticalAlign="middle"/>
+</e:Skin>

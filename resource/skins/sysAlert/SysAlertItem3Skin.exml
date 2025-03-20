@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SysAlertItem3Skin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:core="core.*" height="36" minWidth="320">
+    <!-- <core:UIImage anchorOffsetX="0" anchorOffsetY="0"
+                  source="D:\\EgretProject\\zhj\\zhj_dev\\art\\UI资源（640x1136）\\T通用\\9\\提示.jpg" width="1136" x="-366"
+                  y="-284" /> -->
+	<core:UIImage id="c_bg" y="0" left="0" right="0" visible="true" source="sysAlert_bg2" scale9Grid="39,3,37,24"/>
+	<e:Label id="c_text" text="该物品只能用点券购买" textAlign="center" size="18"  verticalAlign="middle" y="7" textColor="0xFFFFFF" alpha="0.8" height="18" horizontalCenter="0" minWidth="264"/>
+</e:Skin>

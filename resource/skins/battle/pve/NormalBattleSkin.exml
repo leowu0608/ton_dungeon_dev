@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NormalBattleSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:core="core.*" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="173661e5eaf"/>
+	<e:Group id="battleGrp" left="0" right="0" top="0" bottom="0" touchEnabled="false">
+		<e:Group id="diskItem" left="0" right="0" bottom="0" height="400">
+			<e:Group id="diskGrp" width="0" height="0" touchChildren="false" touchEnabled="false" visible="true" y="205" x="360">
+			<core:UIImage id="diskBg" source="battle_diskBg" x="0" y="0" anchorOffsetX="114" anchorOffsetY="114" width="228" height="228" touchEnabled="false"/>
+			<core:UIImage id="disk" source="battle_disk" x="0" y="0" anchorOffsetX="46" anchorOffsetY="46" width="92" height="92" touchEnabled="false"/>
+			</e:Group>
+			<core:UIImage id="diskRect" alpha="0" visible="true" source="battle_alphaBg" scale9Grid="1,1,18,18" left="0" right="0" top="0" bottom="0"/>
+		</e:Group>
+		<e:Group id="bossGrp" width="642" height="120" horizontalCenter="0" top="218">
+			<e:Label id="bossLvTxt" y="9" size="26" height="26" textColor="0xE2E2E2" width="200" x="2" text="Lv.60"/>
+			<e:Label id="bossNameTxt" y="2" size="30" height="30" textColor="0xE2E2E2" textAlign="right" text="杻木摧毁者" width="300" x="284"/>
+			<core:UIButton id="bossTipBtn" x="602" y="0" skinName="BtnSkin" icon="battle_tipBtn" width="31" height="33" visible="true"/>
+			<ns1:SliderBar1 id="bossHpBar" y="36" x="0" direction="ltr" prefix="battle_bossHp" height="28" width="642" visible="true" skinName="BattleBossHpBarSkin"/>
+			<e:List id="bossBuffList" y="71" itemRendererSkinName="BattleBossBuffItemSkin" height="30" x="3" width="318">
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+			</e:List>
+			<e:Group id="bossSkillGrp" y="70" right="4" height="50">
+			<e:List id="bossPassiveList" y="0" height="50" x="0" itemRendererSkinName="BattleBossPassiveItemSkin">
+				<e:layout>
+				<e:HorizontalLayout gap="3"/>
+				</e:layout>
+			</e:List>
+			<e:List id="bossSkillList" y="0" height="50" x="108" itemRendererSkinName="BattleBossSkillItemSkin">
+				<e:layout>
+				<e:HorizontalLayout gap="3"/>
+				</e:layout>
+			</e:List>
+			<e:layout>
+				<e:HorizontalLayout gap="5"/>
+			</e:layout>
+			</e:Group>
+		</e:Group>
+		<e:List id="playerSkillList" itemRendererSkinName="BattlePlayerSkillItemSkin" touchEnabled="false" visible="true" width="276" height="108" bottom="347" horizontalCenter="0">
+			<e:layout>
+			<e:HorizontalLayout gap="60"/>
+			</e:layout>
+		</e:List>
+		<e:List id="playerPassiveList" touchEnabled="false" visible="true" itemRendererSkinName="BattlePlayerPassiveItemSkin" bottom="97" left="10" height="200" width="60">
+			<e:layout>
+				<e:VerticalLayout gap="10"/>
+			</e:layout>
+		</e:List>
+	</e:Group>
+	<e:Group id="pickupGrp" bottom="0" left="0" right="0" top="0" visible="false">
+		<core:UIButton id="pickupBtn" icon="battle_btn2" skinName="BtnSkin1" width="340" height="113" label="拾取" textColor="0xF1EFF0" textSize="38" verticalCenter="295.5" horizontalCenter="1"/>
+	</e:Group>
+	<e:Group id="exitGrp" bottom="0" left="0" right="0" top="0" x="10" y="10" visible="false">
+		<core:UIButton id="exitBtn" icon="battle_btn1" skinName="BtnSkin1" width="340" height="113" label="重新挑战" textColor="0xF1EFF0" textSize="38" verticalCenter="295.5" horizontalCenter="-3"/>
+		<e:Group id="dropGrp" width="0" height="0" visible="true" verticalCenter="-222" horizontalCenter="-4">
+			<core:UIImage id="dropImg" x="0" y="0" source="battle_drop" width="332" height="129" anchorOffsetX="166" anchorOffsetY="65"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

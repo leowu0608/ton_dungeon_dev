@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="PlayerHpItemSkin" width="84" height="14" xmlns:e="http://ns.egret.com/eui" xmlns:core="core.*">
+	<e:ProgressBar id="hpBar" x="0" y="0" skinName="PlayerHpBarSkin" width="84" height="14" minimum="0" maximum="100" value="50" slideDuration="0"/>
+    <core:UIImage id="shieldIcon" x="2" y="2" source="battle_playerHp1" scale9Grid="2,3,2,4" height="10" width="80" visible="true"/>
+	<e:List id="buffList" height="30" x="0" y="-26" itemRendererSkinName="BattlePlayerBuffItemSkin" scaleY="0.7" scaleX="0.7">
+		<e:layout>
+			<e:HorizontalLayout gap="2"/>
+		</e:layout>
+	</e:List>
+</e:Skin>

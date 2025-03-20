@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SceneLoadSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:core="core.*" xmlns:ns1="*" xmlns:login="login.*">
+    <core:UIImage id="bg" horizontalCenter="0" verticalCenter="0" width="1778" height="1335" source=""/>
+	<e:Group id="loadGrp" left="0" right="0" bottom="0" height="200">
+		<core:UIImage source="preload_progressBg" right="0" bottom="0" width="204" height="200"/>
+		<ns1:MainLoadBar id="loadBar" skinName="SceneLoadBarSkin" slideDuration="0" left="0" right="0" bottom="1" height="9"/>
+		<core:UIBitmapLabel id="loadTxt" textAlign="center" right="4" bottom="23" font="progress_fnt" height="35"/>
+        <e:Label id="tipTxt" size="24" textColor="0xA2A2A2" bottom="24" horizontalCenter="0" height="24"/>
+	</e:Group>
+</e:Skin>

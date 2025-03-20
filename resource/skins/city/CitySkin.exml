@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="CitySkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:core="core.*" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="190a51120b3"/>
+	<core:UIButton id="payBtn1" icon="battle_btn1" label="1000金币" width="340" height="113" skinName="BtnSkin1" textColor="0xF1EFF0" textSize="38" top="140" y="300" left="10" scaleX="0.5" scaleY="0.5"/>
+	<core:UIButton id="payBtn2" icon="battle_btn1" label="2000金币" width="340" height="113" skinName="BtnSkin1" textColor="0xF1EFF0" textSize="38" top="210" y="310" left="10" scaleX="0.5" scaleY="0.5" x="20"/>
+	<core:UIButton id="startBtn" icon="battle_btn1" horizontalCenter="0" label="开始战斗" x="581" width="340" height="113" skinName="BtnSkin1" textColor="0xF1EFF0" textSize="38" top="290"/>
+	<core:UIButton id="tipBtn" icon="battle_tipBtn2" horizontalCenter="0" label="战前须知" x="190" top="421" y="290" textColor="0xF1EFF0" textSize="28" width="317" height="60" skinName="BtnSkin2"/>
+    <e:Group id="diskItem" height="400" touchEnabled="false" visible="true" bottom="0" left="0" right="0">
+            <e:Group id="diskGrp" width="0" height="0" touchChildren="false" touchEnabled="false" x="360" y="205">
+                <core:UIImage id="diskBg" x="0" y="0" anchorOffsetX="114" anchorOffsetY="114" width="228" height="228"  source="battle_diskBg"/>
+                <core:UIImage id="disk" x="0" y="0" anchorOffsetX="46" anchorOffsetY="46" height="92" width="92" touchEnabled="false"  source="battle_disk"/>
+            </e:Group>
+            <core:UIImage id="diskRect" alpha="0" source="city_alphaBg" scale9Grid="1,1,18,18" left="0" top="0" bottom="0" right="0" />
+    </e:Group>
+	<e:Group id="tipGrp" left="0" right="0" top="0" bottom="0" visible="false">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0x040B09" strokeAlpha="1" fillAlpha="0.8" visible="true"/>
+		<core:UIImage source="resource/uibg/battle_tip.png" width="641" height="1166" verticalCenter="0" horizontalCenter="0"/>
+		<core:UIButton id="closeBtn" icon="battle_closeBtn" textColor="0xF1EFF0" textSize="28" skinName="BtnSkin" width="31" height="31" verticalCenter="-598.5" horizontalCenter="317.5"/>
+	</e:Group>
+	<e:Label id="tipsTxt" text="兑换比例:0.001TON = 1000金币" y="55" left="10" width="500" size="26" height="30" textAlign="left" verticalAlign="middle"/>
+	<e:Label text="当前为测试环境，请使用测试网的钱包" y="12" left="10" width="500" size="26" height="30" textAlign="left" verticalAlign="middle" x="20" textColor="0xF00303"/>
+	<e:Label text="金币:0" y="95" left="10" width="500" id="totalTxt" size="26" height="30" textAlign="left" verticalAlign="middle"/>
+	<e:Label text="成功次数:0" y="153" left="190" width="400" id="timesTxt1" size="26" height="30" textAlign="left" verticalAlign="middle"/>
+	<e:Label text="成功次数:0" y="223" left="190" width="400" id="timesTxt2" size="26" height="30" textAlign="left" verticalAlign="middle" x="200"/>
+</e:Skin>

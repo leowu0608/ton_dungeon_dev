@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="BattleBossSkillItemSkin" width="50" height="50" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:core="core.*">
+	<w:Config id="19072804fb0"/>
+	<core:UIImage id="bg" width="50" height="50" x="0" y="0" source="battle_bossSkillBg"/>
+	<core:UIImage x="2" y="2" id="icon" width="46" height="46" source="battle_skill_2"/>
+</e:Skin>

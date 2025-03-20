@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BtnYellowSkin" xmlns:e="http://ns.egret.com/eui" xmlns:core="core.*" xmlns:w="http://ns.egret.com/wing"  >
+<core:UIImage id="scaleBg" bottom="0" right="0" source="btn2" left="0" top="0"/>
+	<e:Label id="labelDisplay" verticalAlign="middle" textAlign="center" size="30" left="0" top="0" right="0" bottom="0" bold="true" textColor="0x000000"/>
+</e:Skin>

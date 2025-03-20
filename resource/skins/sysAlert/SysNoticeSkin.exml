@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SysNoticeSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="1000" xmlns:core="core.*" xmlns:ns1="*" height="54">
+	<core:UIImage id="pbg7_0" source="sysAlert_noticeBg" left="0" right="0" scale9Grid="226,16,74,25" touchEnabled="false"/>
+	<e:Label id="c_text" strokeColor="0x000000" mask="{txtMask}" size="22" verticalCenter="0" height="30" verticalAlign="middle" textAlign="left" x="1000" width="2500"/>
+	<e:Rect id="txtMask" enabled="false" top="0" bottom="0" left="32" right="37"/>
+	<core:UIButton id="closeBtn" skinName="SysCloseBtnSkin" right="0" verticalCenter="0" width="25" height="25" visible="false"/>
+</e:Skin>

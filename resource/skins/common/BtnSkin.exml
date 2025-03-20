@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="BtnSkin" xmlns:e="http://ns.egret.com/eui" xmlns:core="core.*">
+	<core:UIImage id="iconDisplay" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

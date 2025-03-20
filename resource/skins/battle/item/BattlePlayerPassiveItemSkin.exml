@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="BattlePlayerPassiveItemSkin" width="60" height="60" xmlns:e="http://ns.egret.com/eui" xmlns:core="core.*">
+	<core:UIImage id="icon" width="60" height="60" x="0" y="0" source="battle_passive_1"/>
+</e:Skin>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SysAlertItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:core="core.*" height="40" minWidth="320">
+    <!-- <core:UIImage anchorOffsetX="0" anchorOffsetY="0"
+                  source="D:\\EgretProject\\zhj\\zhj_dev\\art\\UI资源（640x1136）\\T通用\\9\\提示.jpg" width="1136" x="-366"
+                  y="-284" /> -->
+	<e:Group id="con" width="100%" height="40" y="20" anchorOffsetY="20">
+		<core:UIImage id="c_bg" y="-7" source="sysAlert_alertBg" left="0" right="0" visible="true" x="0" scaleX="1" scaleY="1"/>
+		<e:Label id="c_text" text="" size="22" verticalAlign="middle" textColor="0xFFFFFF" y="10" height="22" textAlign="center" minWidth="274" horizontalCenter="0" x="574" scaleX="1" scaleY="1"/>
+	</e:Group>
+</e:Skin>

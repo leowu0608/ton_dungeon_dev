@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BattlePlayerSkillItemSkin" width="108" height="108" xmlns:e="http://ns.egret.com/eui" xmlns:core="core.*" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="1907253b65c"/>
+	<e:Group id="skillGrp" x="54" y="54" width="108" height="108" anchorOffsetX="54" anchorOffsetY="54">
+		<e:Group id="iconGrp" width="108" height="108" x="0" y="0" visible="true">
+			<core:UIImage id="bg" width="108" height="108" y="0" x="0" source="battle_skillBg"/>
+			<core:UIImage id="icon" width="94" height="94" x="7" y="7" alpha="0.8" source="battle_skill_2"/>
+		</e:Group>
+		<core:UIImage id="cdIcon" mask="{cdItem}" width="100" height="100" x="4" y="4" source="battle_skillMask" visible="true"/>
+		<core:UIImage id="typeBg" x="14" y="91" source="battle_skillNameBg" width="78" height="32" visible="true"/>
+		<e:Label id="typeTxt" text="破甲" y="99" size="22" horizontalCenter="0" textColor="0x2D2D2D"/>
+		<e:Label id="keyTxt" text="H" size="26" left="0" right="0" top="15" textAlign="center" textColor="0xFF0000"/>
+		<e:Label id="cdTxt" size="30" textAlign="center" left="0" right="0" verticalCenter="0" text="5s" height="30" textColor="0xDDDDDD"/>
+		<e:Rect id="cdItem" width="108" height="108" x="0" y="0" visible="true"/>
+	</e:Group>
+</e:Skin>

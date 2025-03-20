@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SysCloseBtnSkin" xmlns:e="http://ns.egret.com/eui" xmlns:core="core.*" width="25" height="25">
+	<core:UIImage source="sysAlert_close1" x="0" y="0"/>
+</e:Skin>
