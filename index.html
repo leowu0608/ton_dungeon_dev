@@ -1,0 +1,674 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dungeon_dev</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+	<meta name="browsermode" content="application">
+	<meta name="apple-mobile-web-app-status-bar-style" content="blank-translucent">
+    <style>
+        html,
+        html, body {
+            -ms-touch-action: none;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: auto;
+            height: 100%;
+            width: 100%;
+        }
+
+        #loadingDiv {
+            display: block;
+            top: 0;
+            left: 50%;
+            position: absolute;
+            overflow: hidden;
+            pointer-events: none;
+            background: url(resource/loading.jpg) no-repeat center;
+            background-size: 100% 100%;
+        }
+
+        #loading1 {
+            position: absolute;
+            bottom: 30%;
+            display: block;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        #progressTxt {
+            width: 100%;
+            display: block;
+            color: rgba(255,255,255,.75);
+            font-family: "Microsoft YaHei";
+            font-weight: bold;
+            font-size: .25rem;
+            text-align: center;
+        }
+
+        #versionTxt {
+            position: absolute;
+            width: 100%;
+            color: rgba(255,255,255,.75);
+            font-family: "Microsoft YaHei";
+            font-size: .25rem;
+            text-align: center;
+            bottom: 0;
+            padding: 5px 0 10px;
+            font-weight: bold;
+            background-color: rgba(0,0,0,.5);
+        }
+
+    </style>
+
+</head>
+
+<body>
+<div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+     data-entry-class="Main"
+     data-orientation="portrait"
+	 data-scale-mode="fixedWidth"
+     data-resolution-mode="retina"
+     data-frame-rate="60"
+     data-content-width="720"
+     data-content-height="1280"
+     data-show-paint-rect="false"
+     data-multi-fingered="2"
+     data-show-fps="false" data-show-log="false"
+     data-show-fps-style="x:0,y:0,size:30,textColor:0xffffff,bgAlpha:0.4">
+</div>
+
+<div id="loadingDiv">
+    <div id="loading1">
+        <div id="bg" style="position: absolute;">
+            <img id="bgImg" src="loadBg.png"/>
+        </div>
+        <div id="fg" style="position: relative;overflow: hidden;">
+            <img id="fgImg" src="loadFg.png"/>
+        </div>
+        <div id="loadlight" style="background: url(loadlight.png) no-repeat">
+        </div>
+        <div id="progressTxt">加载中</div>
+    </div>
+    <div id="versionTxt">版号信息</div>
+</div>
+
+<div id="no_canvasTip"
+     style="margin: -150px 0 0 -475px;position:absolute;width: 1080px;height: 300px;top: 50%;left: 50%;display:none">
+    <p style="color: #ffffff;font-size: 26px;text-align: center;">您的当前浏览器无法打开该游戏！</p>
+    <p style="color: #ffffff;font-size: 26px;text-align: center;">如果您使用的是IE浏览器，请升级至<span style="color: red">IE10</span>及以上版本。
+    </p>
+    <p style="color: #ffffff;font-size: 26px;text-align: center;">如果您使用的是QQ浏览器、360浏览器、猎豹浏览器等浏览器，请切换至<span
+            style="color: red">极速模式</span>。</p>
+    <br>
+    <p style="color: #ffffff;font-size: 26px;text-align: center;">如果以上方法仍无法解决，请下载<span style="color: red">谷歌浏览器</span>，然后重试！
+    </p>
+</div>
+<div id="no_egretTip"
+     style="margin: -50px 0 0 -300px;position:absolute;width: 600px;height: 50px;top: 50%;left: 50%;display:none">
+    <p style="color: #ffffff;font-size: 40px;text-align: center;">资源下载失败，请刷新后重试 :（</p>
+</div>
+<!-- <script type="text/javascript" src="https://cdn.djsh5.com/js/gank.sdk.https.js"></script> -->
+<!-- <script src="https://unpkg.com/@tonconnect/sdk@latest/dist/tonconnect-sdk.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/tonweb@latest/dist/tonweb.min.js"></script> -->
+<!-- <script src="https://unpkg.com/tonweb@0.0.66/dist/tonweb.min.js"></script>
+<script src="https://unpkg.com/ton@0.57.0/dist/ton.umd.min.js"></script> -->
+<!-- <script src="https://unpkg.com/ton@latest/dist/ton.umd.min.js"></script> -->
+<!-- <script src="https://unpkg.com/tonweb@latest/dist/tonweb.min.js"></script> -->
+
+<script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+<script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/tonweb@latest/dist/tonweb.min.js"></script> -->
+<script src="https://unpkg.com/tonweb@latest/dist/tonweb.js"></script>
+<script>
+
+	if(('standalone' in window.navigator)&&window.navigator.standalone)
+	{
+		var noddy,remotes=false;
+		document.addEventListener('click',function(event){
+				noddy=event.target;
+				while(noddy.nodeName!=='A'&&noddy.nodeName!=='HTML') noddy=noddy.parentNode;
+				if('href' in noddy&&noddy.href.indexOf('http')!==-1&&(noddy.href.indexOf(document.location.host)!==-1||remotes))
+				{
+						event.preventDefault();
+						document.location.href=noddy.href;
+				}
+			},false);
+	}
+
+	/**游戏加载对象*/
+	var GamePreload = (function ()
+	{
+		var total, totalW;
+		var loadObj;
+		var onResize;
+
+		function GamePreload()
+		{
+			loadObj = {
+                bgW:1778,
+                bgH:800,
+				loadW: 728,
+				loadH: 30,
+				lightW: 69,
+				lightH: 92
+			};
+		}
+
+		GamePreload.prototype.setTotal = function (value)
+		{
+			this.total = value;
+		}
+
+		GamePreload.prototype.setTotalW = function (value)
+		{
+			this.totalW = value;
+		}
+
+		GamePreload.prototype.init = function ()
+		{
+			var versionTxt = document.getElementById("versionTxt");
+			var urlParams;
+			if (window["getUrlParams"])
+			{
+				urlParams = window["getUrlParams"]();
+			}
+			if (!urlParams)
+			{
+				versionTxt.innerText = window["versionMsg_default"] || "";
+			}
+			else if(urlParams.uid && urlParams.channel)
+			{
+				versionTxt.innerText = window["versionMsg_" + urlParams.channel] || window["versionMsg_default"] || "";
+			}
+			else
+			{
+				versionTxt.innerText = window["versionMsg_wanba"] || "";
+			}
+
+			this.onResize = this.resizeHandler.bind(this);
+			window.addEventListener("resize", this.onResize);
+			setTimeout(this.resizeHandler.bind(this), 30);
+		}
+
+        //fixedHeight适配
+        GamePreload.prototype.calculateElementSize = function (originW, originH,isFullDesign)
+        {
+            var newW, newH,scaleFactor;
+            var screenWidth = document.documentElement.clientWidth;
+            var screenHeight = document.documentElement.clientHeight;
+            var egretCanvas = document.querySelector(".egret-player");
+            var designW = 1;
+            var designH = 1;
+            //采用全屏适配，像背景图
+            if ( isFullDesign )
+            {
+                var sx = 0;
+                var sy = 0;
+                if (screenWidth > originW) {
+                    sx = screenWidth / originW;
+                } else {
+                    sx = originW / screenWidth;
+                }
+
+                if (screenHeight > originH) {
+                    sy = screenHeight / originH;
+                } else {
+                    sy = originH / screenHeight;
+                }
+                scaleFactor = Math.max(sx, sy);
+                newW = originW * scaleFactor;
+                newH = originH * scaleFactor;
+                if (newW > screenWidth) {
+                    newW = screenWidth;
+                }
+
+                if (newH > screenHeight) {
+                    newH = screenHeight;
+                }
+            } else
+            {
+                var maxW = designW * screenHeight / designH;
+                if ( originW > maxW )
+                {
+                    scaleFactor = Math.min( maxW / originW, originW / designW );
+                    newW = originW * scaleFactor;
+                } else
+                {
+                    newW = originW;
+                }
+                newH = originH * newW / originW;
+            }
+            return {w: newW, h: newH};
+        }
+
+		GamePreload.prototype.resizeHandler = function ()
+		{
+            var loadingDiv = document.getElementById( "loadingDiv" );
+            var ldWH = this.calculateElementSize( loadObj.bgW, loadObj.bgH, true);
+            loadingDiv.style.width = ldWH.w + "px";
+            loadingDiv.style.height = ldWH.h + "px";
+            loadingDiv.style.marginLeft = ( -ldWH.w * .5 ) + "px";
+
+			//loading容器
+			var loadContainer = document.getElementById("loading1");
+			var loadContainerSize = this.calculateElementSize(loadObj.loadW, loadObj.loadH);
+			loadContainer.style.width = loadContainerSize.w + "px";
+			loadContainer.style.height = loadContainerSize.h + "px";
+
+            var bgImg = document.getElementById("bgImg");
+            bgImg.style.width = loadContainerSize.w + "px";
+            bgImg.style.height = loadContainerSize.h + "px";
+
+			var fgImg = document.getElementById("fgImg");
+            fgImg.style.width = loadContainerSize.w + "px";
+            fgImg.style.height = loadContainerSize.h + "px";
+
+			var fg = document.getElementById("fg");
+            fg.style.width = loadContainerSize.w + "px";
+            fg.style.height = loadContainerSize.h + "px";
+
+            var lightWH = this.calculateElementSize(loadObj.lightW,loadObj.lightH);
+			var loadlight = document.getElementById("loadlight");
+			loadlight.style.position = "absolute";
+			loadlight.style.width = lightWH.w + "px";
+			loadlight.style.height = lightWH.h + "px";
+			loadlight.style.top = (-(lightWH.h - loadContainerSize.h) * .5) + "px";
+
+			this.setTotalW(loadContainerSize.w);
+		}
+
+		/**进度条*/
+		GamePreload.prototype.setProgress = function (value, maxValue)
+		{
+			value = Math.min(this.total, value) >> 0;
+			var progress = document.getElementById("progressTxt");
+			progress.innerText = "游戏资源加载中" + Math.floor(value / maxValue * 100) + "%";
+
+			var fgImg = document.getElementById("fg");
+			var w = Math.ceil((value / this.total) * this.totalW);
+			w = Math.min(this.totalW, w);
+			fgImg.style.width = w + "px";
+
+			var loadlight = document.getElementById("loadlight");
+			var fgRect = loadlight.getBoundingClientRect();
+			loadlight.style.left = (w - fgRect.width*.5 - 5) + "px";
+		}
+
+		GamePreload.prototype.dispose = function ()
+		{
+			window.removeEventListener("resize", this.onResize);
+		}
+		return GamePreload;
+	})();
+
+
+
+    // http请求
+    var httpRequest = function ( object )
+    {
+        var xhr = new XMLHttpRequest();
+        var method = object.method || 'GET';
+        var url = object.url || '';
+        var type = object.type || 'json';
+        var data = null;
+
+        if (method === 'GET' && object.data){
+            url = url + '?' + getUrlString( object.data );
+        }
+        xhr.open( method, url, true );
+
+        if ( method === 'POST' )
+        {
+            // post 有问题
+            if ( type == 'json' )
+            {
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                data = JSON.stringify( object.data );
+            } else if ( type == 'formdata' )
+            {
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+                data = new FormData();
+                for ( var i in object.data )
+                {
+                    data.append( i, object.data[ i ] );
+                }
+            } else if ( type == 'text' )
+            {
+                data = object.data;
+            } else
+            {
+                data = object.data;
+            }
+        }
+
+        xhr.addEventListener( 'error', function (){
+            //console.log('error: ', url);
+            object.fail && object.fail( { error: '请求失败' } );
+        } );
+
+        xhr.addEventListener( 'load', function (){
+            //console.log('load: ', url);
+            object.success && object.success( xhr.response );
+        });
+
+
+        xhr.send( data );
+
+        //console.log('request url: ', url, data);
+    };
+
+
+    function getUuid () {
+        let timestamp = new Date().getTime();
+        let perforNow = (typeof performance !== 'undefined' && performance.now && performance.now() * 1000) || 0;
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+            let random = Math.random() * 16;
+            if (timestamp > 0) {
+                random = (timestamp + random) % 16 | 0;
+                timestamp = Math.floor(timestamp / 16);
+            } else {
+                random = (perforNow + random) % 16 | 0;
+                perforNow = Math.floor(perforNow / 16);
+            }
+            return (c === 'x' ? random : (random & 0x3) | 0x8).toString(16);
+        });
+    };
+
+    window.__sesion_id = getUuid();
+
+    //游戏SDK
+    var runtimeSDK = window[ "LTGAME_SDK" ] = {};
+
+    // 游戏事件打点日志上报接口
+    runtimeSDK.logReport = function(group, event_id, event_name, event_act, start_ts, end_ts, cost_time, uid) {
+        var serverData = window['$serverData'] || {};
+        uid = uid || serverData.uid || '';
+
+        var data = {};
+        data.group = group;
+        data.event_id = event_id;
+        data.event_name = event_name;
+        data.action = event_act;
+        data.begin_time = start_ts;
+        data.end_time = end_ts;
+        data.duration = cost_time;
+        data.bussiness_id = 'zhj';
+        data.channel = 'zhj';
+        data.region_id = 0;
+        data.uid = uid;
+        data.session_id = window.__sesion_id;
+        data.client_ver = 'debug';
+        // 不能直接调用egret.ExternalInterface.call,如果需要上报引擎还未初始化完成的日志，那就会报错了。
+        //egret.ExternalInterface.call( "logReport", JSON.stringify( data ) );
+        // var url = 'http://192.168.1.221:7002/api/game_event';
+        // httpRequest({
+        //     method: 'POST',
+        //     data : data,
+        //     type : 'json',
+        //     url: url,
+        //     success: function(responseText) {
+        //         console.info('logReport success:' + responseText);
+        //     },
+        //     fail: function(res) {
+        //         console.error('logReport fail:' + res);
+        //     },
+        // });
+    };
+
+
+    /** 版号信息 */
+	var versionMsg_default = "本网络游戏适合年满18周岁用户使用，不为未满十八岁的用户提供服务。\n健康游戏忠告：抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。\n著作权人：杭州龙拓网络科技有限公司\t\t 出版单位：北京畅游时代数码技术有限公司\t\t ISBN：978-7-498-09673-9\t\t 审批文号：国新出审[2022]1032号 \t\t运营单位：北京畅游时代数码技术有限公司";
+
+	/** 攻略地址 */
+	var strategyUrl = "https://www.changyou.com/events/zhj/data/index.shtml";
+
+	/**游戏登陆前对象*/
+	var gameLoadObj = new GamePreload();
+	gameLoadObj.init();
+
+	function queryStr(argID)
+	{
+		var reg = new RegExp("(^|&)" + argID + "=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null)
+		{
+			return decodeURIComponent(r[2]);
+		}
+		return null;
+	}
+
+	var plat = queryStr("platform");
+	if (plat)
+	{
+		var cdnUrl = queryStr("cdnUrl");
+		var loginJsUrl = cdnUrl + "js/login.js?v=" + Math.random();
+		var unicornUrl = cdnUrl + "js/unicorn_sdk.js?v=" + Math.random();
+		document.write("<script type='text/javascript' charset='utf-8' src='" + loginJsUrl + "'><\/script>");
+		document.write("<script type='text/javascript' charset='utf-8' src='" + unicornUrl + "'><\/script>");
+	}
+	// 游戏参数
+	var $param = {};
+	$param.svrId = 1;
+	$param.host = "192.168.1.100";//修改为本地服务器
+	$param.port = 30011;
+	$param.region_id = 7;
+	$param.selectServer = 1;
+	$param.inputAccount = 1;
+	$param.md5Res = "192.1682.75/dungeon/dungeon_dev/";
+	// $param.recordUrl = "http://192.168.1.18:3005/verify/1";
+	// $param.recordUrl = "http://192.168.1.146:3005/verify/1";
+	// $param.recordUrl = "http://192.168.1.84:3005/battle_verify/debug";
+
+
+	var $gameLogParams = {};
+	$gameLogParams.enabled_gameLog = 0;
+	$gameLogParams.enabled_outputLog = 1;
+	$gameLogParams.enabled_outputInfo = 1;
+	$gameLogParams.enabled_outputError = 1;
+	$gameLogParams.enabled_outputWarning = 1;
+	$gameLogParams.enabled_outputDebug = 1;
+	$gameLogParams.enabled_outputRpcDebug = 1;
+	$gameLogParams.enabled_outputRpcError = 1;
+	$gameLogParams.enabled_outputSocketDebug = 1;
+	$gameLogParams.enabled_outputSocketError = 1;
+	$gameLogParams.enabled_outputPlotLog = 1;
+
+	var $lockStep = 1;
+
+	var $localServerList = [
+        // {svr_id: 1, ip: "47.96.97.108", port: [30088], wss_mode:0, showname: "外网服务器", region_id: 1, region_name: "外网服务器"},
+        { svr_id: 1, ip: "192.168.1.18", port: [30015], wss_mode:0, showname: "内网服务器1", region_id: 10, region_name: "内网服务器1", link_id: 7, link_name: "内网", link_name_is_full: true},
+		{ svr_id: 4, ip: "192.168.1.18", port: [30015], wss_mode:0, showname: "内网服务器4", region_id: 10, region_name: "内网服务器4", maintain: 1, link_id: 7, link_name: "内网", link_name_is_full: true},
+		{ svr_id: 5, ip: "192.168.1.18", port: [30015], wss_mode:0, showname: "内网服务器5", region_id: 10, region_name: "内网服务器5", link_id: 7, link_name: "内网", link_name_is_full: true},
+		{ svr_id: 6, ip: "192.168.1.18", port: [30015], wss_mode:0, showname: "内网服务器6", region_id: 10, region_name: "内网服务器6", link_id: 7, link_name: "内网", link_name_is_full: true},
+		{ svr_id: 10, ip: "192.168.1.18", port: [30015], wss_mode:0, showname: "内网服务器10", region_id: 10, region_name: "内网服务器10", link_id: 7, link_name: "内网", link_name_is_full: true},
+        // {svr_id: 1, ip: "192.168.1.108", port: [30088], wss_mode:0, showname: "chenjian", region_id: 1, region_name: "chenjian"},
+        {svr_id: 1, ip: "192.168.1.146", port: [30011, 30012], wss_mode:0, showname: "leowu1", region_id: 7, region_name: "leowu", link_id: 9, link_name: "leowu", link_name_is_full: true},
+        { svr_id: 1, ip: "192.168.1.73", port: [30011, 30012], wss_mode:0, showname: "lch1", region_id: 5, region_name: "lch", link_id: 8, link_name: "lch", link_name_is_full: true},
+		// {svr_id: 1, ip: "192.168.1.106", port: [30088], wss_mode:0, showname: "YFH1", region_id: 1, region_name: "YFH"},
+        // {svr_id: 2, ip: "192.168.1.106", port: [30088], wss_mode:0, showname: "YFH2", region_id: 1, region_name: "YFH"},
+        // {svr_id: 1, ip: "192.168.1.102", port: [30011, 30012], wss_mode:0, showname: "hrn1", region_id: 1, region_name: "hrn"},
+        // {svr_id: 2, ip: "192.168.1.102", port: [30088], wss_mode:0, showname: "hrn2", region_id: 1, region_name: "hrn"},
+        // { svr_id: 1, ip: "192.168.1.73", port: [30011, 30012], wss_mode:0, showname: "lch1", region_id: 1, region_name: "lch"},
+        // { svr_id: 2, ip: "192.168.1.73", port: [30088], wss_mode:0, showname: "lch2", region_id: 1, region_name: "lch"}
+        {svr_id: 1, ip: "192.168.1.97", port: [50001], wss_mode:0, showname: "leekcp", region_id: 6, region_name: "lee", link_id: 1, link_name: "lee", link_name_is_full: true},
+        {svr_id: 1, ip: "192.168.1.97", port: [30001], wss_mode:0, showname: "lee-centos7-1服", region_id: 6, region_name: "lee", link_id: 1, link_name: "lee", link_name_is_full: true},
+		{svr_id: 1, ip: "192.168.111.129", port: [50001], wss_mode:0, showname: "leekcp2", region_id: 6, region_name: "lee", link_id: 1, link_name: "lee", link_name_is_full: true},
+        {svr_id: 1, ip: "192.168.1.77", port: [30001], wss_mode:0, showname: "zhjljp-01", region_id: 6, region_name: "zhjljp", link_id: 1, link_name: "lee", link_name_is_full: true},
+
+
+        // {svr_id: 2, ip: "192.168.1.118", port: [30088], wss_mode:0, showname: "lee2", region_id: 1, region_name: "lee"},
+        // {svr_id: 3, ip: "192.168.1.118", port: [30088], wss_mode:0, showname: "lee3", region_id: 1, region_name: "lee"},
+        // {svr_id: 4, ip: "192.168.1.118", port: [30088], wss_mode:0, showname: "lee4", region_id: 1, region_name: "lee"},
+        // {svr_id: 5, ip: "192.168.1.118", port: [30088], wss_mode:0, showname: "lee5", region_id: 1, region_name: "lee"},
+        // {svr_id: 6, ip: "192.168.1.118", port: [30088], wss_mode:0, showname: "lee6", region_id: 1, region_name: "lee"},
+        // {svr_id: 7, ip: "192.168.1.118", port: [30088], wss_mode:0, showname: "lee7", region_id: 1, region_name: "lee"},
+        // {svr_id: 8, ip: "192.168.1.118", port: [30088], wss_mode:0, showname: "lee8", region_id: 1, region_name: "lee"},
+        // {svr_id: 9, ip: "192.168.1.118", port: [30088], wss_mode:0, showname: "lee9", region_id: 1, region_name: "lee"},
+        // {svr_id: 10, ip: "192.168.1.118", port: [30088], wss_mode:0, showname: "lee10", region_id: 1, region_name: "lee"},
+        {svr_id: 1, ip: "192.168.1.156", port: [30011,30012], wss_mode:0, showname: "zhy1", region_id: 9, region_name: "zhy", link_id: 11, link_name: "zhy", link_name_is_full: true},
+        {svr_id: 2, ip: "192.168.1.156", port: [30011,30012], wss_mode:0, showname: "zhy2", region_id: 9, region_name: "zhy", link_id: 11, link_name: "zhy", link_name_is_full: true},
+        {svr_id: 3, ip: "192.168.1.156", port: [30011,30012], wss_mode:0, showname: "zhy3", region_id: 9, region_name: "zhy", link_id: 11, link_name: "zhy", link_name_is_full: true},
+        {svr_id: 4, ip: "192.168.1.156", port: [30011,30012], wss_mode:0, showname: "zhy4", region_id: 9, region_name: "zhy", link_id: 11, link_name: "zhy", link_name_is_full: true},
+        {svr_id: 5, ip: "192.168.1.156", port: [30011,30012], wss_mode:0, showname: "zhy5", region_id: 9, region_name: "zhy", link_id: 11, link_name: "zhy", link_name_is_full: true},
+        {svr_id: 6, ip: "192.168.1.156", port: [30011,30012], wss_mode:0, showname: "zhy6", region_id: 9, region_name: "zhy", link_id: 11, link_name: "zhy", link_name_is_full: true},
+        {svr_id: 7, ip: "192.168.1.156", port: [30011,30012], wss_mode:0, showname: "zhy7", region_id: 9, region_name: "zhy", link_id: 11, link_name: "zhy", link_name_is_full: true},
+        {svr_id: 8, ip: "192.168.1.156", port: [30011,30012], wss_mode:0, showname: "zhy8", region_id: 9, region_name: "zhy", link_id: 11, link_name: "zhy", link_name_is_full: true},
+        {svr_id: 9, ip: "192.168.1.156", port: [30011,30012], wss_mode:0, showname: "zhy9", region_id: 9, region_name: "zhy", link_id: 11, link_name: "zhy", link_name_is_full: true},
+        {svr_id: 10, ip: "192.168.1.156", port: [30011,30012], wss_mode:0, showname: "zhy10", region_id: 9, region_name: "zhy", link_id: 11, link_name: "zhy", link_name_is_full: true},
+        {svr_id: 1, ip: "192.168.1.156", port: [30101,30102], wss_mode:0, showname: "zhy1", region_id: 18, region_name: "zhy二区", link_id: 12, link_name: "zhy二区", link_name_is_full: true},
+        {svr_id: 2, ip: "192.168.1.156", port: [30101,30102], wss_mode:0, showname: "zhy2", region_id: 18, region_name: "zhy二区", link_id: 12, link_name: "zhy二区", link_name_is_full: true},
+        {svr_id: 3, ip: "192.168.1.156", port: [30101,30102], wss_mode:0, showname: "zhy3", region_id: 18, region_name: "zhy二区", link_id: 12, link_name: "zhy二区", link_name_is_full: true},
+        {svr_id: 4, ip: "192.168.1.156", port: [30101,30102], wss_mode:0, showname: "zhy4", region_id: 18, region_name: "zhy二区", link_id: 12, link_name: "zhy二区", link_name_is_full: true},
+        {svr_id: 5, ip: "192.168.1.156", port: [30101,30102], wss_mode:0, showname: "zhy5", region_id: 18, region_name: "zhy二区", link_id: 12, link_name: "zhy二区", link_name_is_full: true}
+        // {svr_id: 1, ip: "192.168.1.93", port: [30088], wss_mode:0, showname: "xd", region_id: 1, region_name: "xd"},
+    ];
+
+
+
+	var loadScript = function (list, callback)
+	{
+		var loaded = 0;
+		var loadNext = function ()
+		{
+			loadSingleScript(list[loaded], function ()
+			{
+				loaded++;
+				gameLoadObj.setProgress(loaded, list.length);
+				if (loaded >= list.length)
+				{
+					callback();
+				} else
+				{
+					loadNext();
+				}
+			})
+		};
+		loadNext();
+	};
+
+	var loadSingleScript = function (src, callback)
+	{
+		var s = document.createElement('script');
+		s.async = false;
+		s.src = src;
+		// console.log('load:' + src);
+		s.addEventListener('load', function ()
+		{
+			s.parentNode.removeChild(s);
+			s.removeEventListener('load', arguments.callee, false);
+			callback();
+		}, false);
+		document.body.appendChild(s);
+	};
+
+    var loadManifest = function(url, tries, callback){
+        if (tries > 5){
+            console.error('loadManifest fail!');
+            callback(false);
+            return;
+        }
+
+        httpRequest({
+            method: 'get',
+            url: url,
+            success: function(responseText) {
+                callback(true, responseText);
+            },
+            fail: function(res) {
+                tries++;
+                console.log('try loadManifest:' + tries);
+                loadManifestUrl(url, tries, callback);
+            },
+        });
+    }
+
+    window.loadGameJSStartTs = Date.now();
+    runtimeSDK.logReport('signin', 1004, '加载游戏脚本', 0, window.loadGameJSStartTs, 0, 0);
+    var manifestUrl = './manifest.json?v=' + Math.random();
+    console.log( "manifestUrl: ", manifestUrl );
+
+    loadManifest(manifestUrl, 0, function(success, res) {
+        if (!success) {
+            return;
+        }
+        var manifest = JSON.parse(res);
+        var list = manifest.initial.concat(manifest.game);
+        gameLoadObj.setTotal(list.length);
+        loadScript(list, function ()
+        {
+            var now = Date.now();
+            runtimeSDK.logReport('signin', 1004, '加载游戏脚本', 1, window.loadGameJSStartTs, now, now - window.loadGameJSStartTs);
+
+            /**判断浏览器是否支持canvas**/
+            try
+            {
+                document.createElement('canvas').getContext('2d');
+            } catch (e)
+            {
+                document.getElementById("loadingDiv").style.display = "none";
+                document.getElementById("no_canvasTip").style.display = "block";
+                return
+            }
+
+            try
+            {
+                /**
+                 * {
+                 * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+                 * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+                 * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+                 * "calculateCanvasScaleFactor": //a function return canvas scale factor
+                 * }
+                 **/
+                //默认开启抗锯齿属性，web端支持，原生端官方暂不支持
+                egret.runEgret({
+                    renderMode: "webgl", audioType: 2, antialias: false, calculateCanvasScaleFactor: function (context)
+                    {
+                        var backingStore = context.backingStorePixelRatio ||
+                            context.webkitBackingStorePixelRatio ||
+                            context.mozBackingStorePixelRatio ||
+                            context.msBackingStorePixelRatio ||
+                            context.oBackingStorePixelRatio ||
+                            context.backingStorePixelRatio || 1;
+                        return (window.devicePixelRatio || 1) / backingStore;
+                    }
+                });
+                Game.onPlayVideo = Game.onPlayVideo || function(state){}
+                egret.ExternalInterface.call("jsloaded", "");
+
+                if(+queryStr("isNative") == 1)
+                {
+                    var designW = 1422;
+                    var designH = 800;
+                    var devicePixelRatio = window.devicePixelRatio || 1;
+                    var boundingClientWidth = egret.Capabilities.boundingClientWidth;
+                    var boundingClientHeight = egret.Capabilities.boundingClientHeight;
+                    var radio = Math.min( boundingClientWidth * devicePixelRatio / designW, boundingClientHeight * devicePixelRatio / designH );
+                    window.riskSize = 90 / radio;
+                    core.DeviceUtils._riskArea = {left:window.riskSize,right:0,top:0,bottom:0};
+                }
+            } catch (e)
+            {
+                console.log("脚本错误：", e);
+                document.getElementById("loadingDiv").style.display = "none";
+                document.getElementById("no_egretTip").style.display = "block";
+            }
+
+        });
+    });
+
+
+</script>
+</body>
+
+</html>
